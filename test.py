@@ -75,6 +75,16 @@ def test_DAGTokenizer():
     """))
 
 
+def test_convert_tokens_to_ids():
+    tokenizer = NGramTokenizer()
+    tokenizer.train(["其中尤以黎族文物为重，可以说是国内黎族文物收集最为全面、精品最为丰富的博物馆之一。"])
+    print(tokenizer.word_count_map)
+
+    token = tokenizer.tokenize("其中尤以黎族文物为重，可以说是国内黎族文物收集最为全面、精品最为丰富的博物馆之一。")
+    print(token)
+    print(tokenizer.convert_tokens_to_ids(token))
+
+
 def test_jieba():
     print(list(jieba.tokenize("""
     博物馆是为社会服务的非营利性常设机构，它研究、收藏、保护、阐释和展示物质与非物质遗产。

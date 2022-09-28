@@ -103,6 +103,9 @@ class NGramTokenizer():
                 i += len(word)  # i移动的位数取决于单词长度
         return list(filter(lambda it: len(it) != 0, result))
 
+    def convert_tokens_to_ids(self, token=[]):
+        return list(map(lambda it: self.word_id_map[it], token))
+
     pass
 
 
